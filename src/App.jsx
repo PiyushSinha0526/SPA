@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import About from "./components/About";
+import Features from "./components/Features";
+import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
-
   return (
-    <div className="App">
-      Music app
+    <div className="App flex flex-col gap-10 md:gap-15">
+      <Header />
+      <Home />
+      <About />
+      <Features />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
