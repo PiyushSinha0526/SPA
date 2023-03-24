@@ -148,7 +148,7 @@ function Header() {
           animate={isMenuOpen ? "opened" : "closed"}
         >
           {isMenuOpen && (
-            <div className="flex flex-col mt-5">
+            <div className="flex flex-col mt-5 lg:hidden">
               <span
                 className="self-end bg-blue-400 p-2 mr-10 inline-flex items-center justify-center rounded-md text-white hover:text-blue-400 hover:bg-white hover:outline outline-blue-400"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
