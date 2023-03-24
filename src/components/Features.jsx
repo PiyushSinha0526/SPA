@@ -41,7 +41,7 @@ const featureItem = [
 
 function Features() {
   return (
-    <div className=" flex flex-col items-center max-w-6xl w-full h-screen px-10 m-auto gap-7 ">
+    <div className=" flex flex-col items-center max-w-6xl w-full h-fit md:h-screen px-10 m-auto gap-7 ">
       <h2 className="text-4xl ">Popular Features</h2>
       <p className="text-gray-400 text-base leading-6 text-center max-w-[550px]">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
