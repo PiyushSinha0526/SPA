@@ -10,12 +10,12 @@ function Home() {
         <img
           src={display}
           alt="monitor"
-          className="w-80 h-80 md:w-96 md:h-96 lg:w-fit lg:h-fit -z-10"
+          className="w-80 h-80 md:w-96 md:h-96 lg:w-fit lg:h-fit -z-10 drop-shadow-xl"
         />
         <img
           src={mouse}
           alt="mouse"
-          className="absolute bottom-5 skew-y-6 -skew-x-3 right-[30%] md:right-[15%] lg:right-[25%] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 "
+          className="absolute bottom-5 skew-y-6 -skew-x-3 right-[30%] md:right-[15%] lg:right-[25%] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 drop-shadow-xl"
         />
       </div>
       <div className=" lg:w-1/2 w-full flex justify-center text-white px-10 md:px-0">

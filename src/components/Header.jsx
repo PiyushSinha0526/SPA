@@ -170,7 +170,7 @@ function Header() {
                 </svg>
               </span>
 
-              <ul className=" py-4 shadow-md flex flex-col justify-center items-center text-lg font-semibold text-gray-500 p-2">
+              <ul className=" py-4 shadow-md flex flex-col justify-center items-center text-lg font-semibold text-gray-400 p-2">
                 {navItems.map((item, index) => {
                   return (
                     <li

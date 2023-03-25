@@ -30,8 +30,10 @@ function Reviews() {
 
   return (
     <div className="flex flex-col items-center max-w-6xl w-full h-screen px-10 m-auto gap-4 p-2">
-      <h2 className="text-4xl">Customer reviews</h2>
-      <p>What out customers are saying ...</p>
+      <h2 className="text-3xl md:text-4xl text-center">Customer reviews</h2>
+      <p className="text-gray-400 text-center">
+        What our customers are saying ...
+      </p>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:flex-row gap-4">
         {customerReviews.map((rev) => (
           <div
