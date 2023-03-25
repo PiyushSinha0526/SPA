@@ -18,7 +18,7 @@ function Home() {
           className="absolute bottom-5 skew-y-6 -skew-x-3 right-[30%] md:right-[15%] lg:right-[25%] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 drop-shadow-xl"
         />
       </div>
-      <div className=" lg:w-1/2 w-full flex justify-center text-white px-10 md:px-0">
+      <div className=" lg:w-1/2 w-full flex text-white px-10 md:px-0 md:pr-10">
         <div className="md:w-4/5 lg:3/5 flex flex-col justify-center items-center md:items-end md:text-right gap-3 md:gap-6 text-center ">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold md:text-right">
             Heading for Landing Page of Unknown Product{" "}

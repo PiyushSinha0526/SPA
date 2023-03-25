@@ -29,7 +29,7 @@ function Reviews() {
   ];
 
   return (
-    <div className="flex flex-col items-center max-w-6xl w-full h-screen px-10 m-auto gap-4 p-2">
+    <div className="flex flex-col items-center max-w-6xl w-full h-fit px-10 m-auto gap-4 p-2">
       <h2 className="text-3xl md:text-4xl text-center">Customer reviews</h2>
       <p className="text-gray-400 text-center">
         What our customers are saying ...

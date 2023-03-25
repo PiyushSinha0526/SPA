@@ -1,6 +1,11 @@
 import React from "react";
 import { BsWrenchAdjustable } from "react-icons/bs";
-import { MdPriceChange } from "react-icons/md";
+import {
+  MdPriceChange,
+  MdOutlineShop,
+  MdOutlineSpatialTracking,
+  MdOutlineSell,
+} from "react-icons/md";
 import { GiBroom } from "react-icons/gi";
 import { BiSupport } from "react-icons/bi";
 import { CiDeliveryTruck } from "react-icons/ci";
@@ -28,20 +33,38 @@ const featureItem = [
   {
     name: "Technical Support",
     icon: BiSupport,
-    color: "text-sky-400",
-    bg: "bg-sky-400",
+    color: "text-teal-400",
+    bg: "bg-teal-400",
+  },
+  {
+    name: "Online Tracking ",
+    icon: MdOutlineSpatialTracking,
+    color: "text-blue-400",
+    bg: "bg-blue-400",
+  },
+  {
+    name: "Sell Product",
+    icon: MdOutlineSell,
+    color: "text-red-400",
+    bg: "bg-red-400",
   },
   {
     name: "Delivery ",
     icon: CiDeliveryTruck,
-    color: "text-sky-400",
-    bg: "bg-sky-400",
+    color: "text-teal-400",
+    bg: "bg-teal-400",
+  },
+  {
+    name: "Online Shopping ",
+    icon: MdOutlineShop,
+    color: "text-black",
+    bg: "bg-black",
   },
 ];
 
 function Features() {
   return (
-    <div className=" flex flex-col items-center max-w-6xl w-full h-fit md:h-screen px-10 m-auto gap-7 ">
+    <div className=" flex flex-col items-center max-w-6xl w-full h-fit lg:h-screen px-10 m-auto gap-7 ">
       <h2 className="text-3xl md:text-4xl text-center">Popular Features</h2>
       <p className="text-gray-400 text-base leading-6 text-center max-w-[550px]">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
