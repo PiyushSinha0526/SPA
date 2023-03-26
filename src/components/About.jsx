@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCheck } from "react-icons/fa";
 import build from "../assets/build.png";
-
+import { motion } from "framer-motion";
 function About() {
   const products = [
     {
@@ -23,8 +23,28 @@ function About() {
       name: "Speakers",
     },
   ];
+  // const slide = {
+  //   hidden: {
+  //     x: "100vw",
+  //     // x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+  //     // y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+  //   },
+  //   show: {
+  //     x: 0,
+  //     y: 0,
+  //     transition: {
+  //       type: "tween",
+  //       delay: 0.2,
+  //       duration: 0.3,
+  //       ease: "easeOut",
+  //     },
+  //   },
+  // };
   return (
-    <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl w-full h-fit md:h-[80vh] mb-10 md:p-0 md:pl-10 pl-8  m-auto gap-10 ">
+    <div
+      id="aboutUs"
+      className="flex flex-col md:flex-row justify-center items-center max-w-6xl w-full h-fit md:h-[80vh] mb-10 md:p-0 md:pl-10 pl-8  m-auto gap-10 "
+    >
       <div className="w-full md:w-1/2 flex flex-col gap-6">
         <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center md:text-left">
           Lorem ipsum dolor sit amet, consectetur
@@ -42,7 +62,16 @@ function About() {
           ))}
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center relative">
+      <motion.div
+        className="w-1/2 flex justify-center items-center relative"
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: false }}
+        transition={{
+          duration: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
         <img
           src={build}
           alt="pc build"
@@ -51,14 +80,14 @@ function About() {
         <svg
           id="10015.io"
           viewBox="0 0 480 480"
-          className="absolute top-0 min-w-[300px] sm:min-w-[400px] w-full -z-10"
+          className="absolute top-0 min-w-[300px] sm:min-w-[380px] w-full -z-10"
         >
           <path
             fill="#93c5fd"
             d="M439.5,308.5Q429,377,366.5,406.5Q304,436,245.5,420Q187,404,137.5,377Q88,350,56,295Q24,240,46.5,178Q69,116,125.5,89Q182,62,243.5,51Q305,40,357.5,78Q410,116,430,178Q450,240,439.5,308.5Z"
           />
         </svg>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-
+import { Link } from "react-scroll";
+import { FaShoppingCart } from "react-icons/fa";
+import { RiComputerFill } from "react-icons/ri";
 function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
@@ -50,16 +52,12 @@ function Header() {
       id: "features",
     },
     {
-      name: "Services",
-      id: "services",
+      name: "Post",
+      id: "post",
     },
     {
-      name: "Portfolio",
-      id: "portfolio",
-    },
-    {
-      name: "Blog",
-      id: "blog",
+      name: "Reviews",
+      id: "reviews",
     },
     {
       name: "Contact Us",
@@ -88,28 +86,38 @@ function Header() {
       <div className="w-full max-w-[1200px] m-auto flex relative">
         <div className="flex w-full justify-between mx-10 items-center text-black h-20 ">
           {/* logo */}
-          <div className="w-5 h-5 bg-blue-300"></div>
+          <div className="text-blue-400 ">
+            <RiComputerFill size={45} className="drop-shadow-md skew-x-6" />
+          </div>
           {/* nav item */}
           <nav className="hidden justify-center lg:flex">
-            <ul className="flex text-lg ">
+            <div className="flex text-lg ">
               {navItems.map((item, index) => {
                 return (
-                  <li
+                  <Link
                     key={index}
+                    to={item.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
                     className={`navLinkLarge ${
                       activeIndex == index ? "active" : ""
                     }`}
                     onClick={() => setActiveIndex(index)}
                   >
-                    <a href="#">{item.name}</a>
-                  </li>
+                    {item.name}
+                  </Link>
                 );
               })}
-            </ul>
+            </div>
           </nav>
           {/*  */}
-          <div className="hidden lg:block w-32 h-10 bg-blue-400 text-black">
-            sdsdsd
+          <div className="hidden lg:block relative">
+            <FaShoppingCart size={21} />
+            <span className="px-1 bg-blue-400 rounded-full text-xs absolute -right-1 -top-2">
+              {1}
+            </span>
           </div>
         </div>
 
@@ -170,21 +178,26 @@ function Header() {
                 </svg>
               </span>
 
-              <ul className=" py-4 shadow-md flex flex-col justify-center items-center text-lg font-semibold text-gray-400 p-2">
+              <div className=" py-4 shadow-md flex flex-col justify-center items-center text-lg font-semibold text-gray-400 p-2">
                 {navItems.map((item, index) => {
                   return (
-                    <li
+                    <Link
+                      to={item.id}
+                      spy={true}
+                      smooth={true}
+                      offset={-100}
+                      duration={500}
                       key={index}
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
                       className={`mb-1 text-center hover:border-b-2 border-blue-400 ${
                         activeIndex == index ? "active font-bold" : ""
                       }`}
-                      onClick={() => setActiveIndex(index)}
                     >
-                      <a href="#">{item.name}</a>
-                    </li>
+                      {item.name}
+                    </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
           )}
         </motion.div>

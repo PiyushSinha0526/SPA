@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Post() {
   const posts = [
@@ -28,15 +29,26 @@ function Post() {
     },
   ];
   return (
-    <div className=" flex flex-col items-center max-w-6xl w-full h-fit lg:h-screen px-10 m-auto gap-7 ">
+    <div
+      id="post"
+      className="mt-20  flex flex-col items-center max-w-6xl w-full h-fit lg:h-screen px-10 m-auto gap-7 "
+    >
       <h2 className="text-3xl md:text-4xl text-center">Latest Posts</h2>
       <p className="text-gray-400 text-base leading-6 text-center max-w-[550px]">
         Learn about pc building and all its components and other techy stuff
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-        {posts.map((post) => (
-          <div
+        {posts.map((post, idx) => (
+          <motion.div
             key={post.title}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              delay: idx * 0.2,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
             className="p-3 shadow-2xl rounded-lg flex flex-col justify-between items-center w-full relative"
           >
             <img src={post.url} alt={post.title} className="object-cover" />
@@ -47,7 +59,7 @@ function Post() {
               <h4 className="text-lg">{post.title}</h4>
               <p className="text-gray-500 text-base">{post.data}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

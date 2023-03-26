@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { ImQuotesLeft } from "react-icons/im";
 function Reviews() {
   const customerReviews = [
@@ -29,14 +30,18 @@ function Reviews() {
   ];
 
   return (
-    <div className="flex flex-col items-center max-w-6xl w-full h-fit px-10 m-auto gap-4 p-2">
+    <div
+      id="reviews"
+      className="flex flex-col items-center max-w-6xl w-full h-fit px-10 m-auto gap-4 p-2"
+    >
       <h2 className="text-3xl md:text-4xl text-center">Customer reviews</h2>
       <p className="text-gray-400 text-center">
         What our customers are saying ...
       </p>
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:flex-row gap-4">
         {customerReviews.map((rev) => (
-          <div
+          <motion.div
+            whileHover={{ scale: 1.025 }}
             className="flex flex-col items-center shadow-2xl gap-2 rounded-lg "
             key={rev.name}
           >
@@ -64,7 +69,7 @@ function Reviews() {
                 </svg>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

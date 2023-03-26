@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { BsTwitter } from "react-icons/bs";
 import { RiFacebookFill } from "react-icons/ri";
 import { RiInstagramFill } from "react-icons/ri";
@@ -10,15 +11,13 @@ function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");
-    console.log(`Name: ${name}`);
-    console.log(`Email: ${email}`);
-    console.log(`Subject: ${subject}`);
-    console.log(`Message: ${message}`);
   };
   return (
-    <div className="flex flex-col items-center w-full h-fit lg:h-screen px-10 m-auto gap-7 ">
-      <h2 className="text-4xl">Contact Us</h2>
+    <div
+      id="contactUs"
+      className="mt-20 flex flex-col items-center w-full h-fit lg:h-screen px-10 m-auto gap-7 "
+    >
+      <h3 className="text-4xl">Contact Us</h3>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-3 max-w-[320px] w-full md:max-w-[400px] shadow-lg p-5 rounded-lg"
@@ -50,12 +49,14 @@ function ContactUs() {
           onChange={(e) => setMessage(e.target.value)}
           className="shadow-lg py-2 px-4 rounded-lg w-full active:outline focus:outline outline-2 outline-blue-400"
         />
-        <button
+        <motion.button
+          whileHover={{ scale: 1.025 }}
+          whileTap={{ scale: 0.95 }}
           type="submit"
           className="w-full shadow-2xl py-2 px-4 rounded-lg font-bold text-white bg-blue-400 hover:bg-white hover:outline hover:text-blue-400 outline-2 outline-blue-400 "
         >
           Submit
-        </button>
+        </motion.button>
       </form>
       <div className="flex flex-col items-center gap-4 text-lg text-gray-400">
         Social media links:

@@ -4,7 +4,7 @@ function Card({ name, Icon, colorValue, bg }) {
   const [isHover, setIsHover] = useState(false);
   return (
     <div
-      className={`p-4 shadow-2xl rounded-lg flex flex-col justify-between items-center w-full h-44 ${
+      className={`p-4 shadow-2xl rounded-lg flex flex-col justify-between items-center w-full h-44 transition duration-1000 ease-out ${
         !isHover ? `bg-white` : `${bg}`
       }`}
       onMouseEnter={() => setIsHover(true)}

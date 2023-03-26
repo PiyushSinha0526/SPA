@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { BsWrenchAdjustable } from "react-icons/bs";
 import {
   MdPriceChange,
@@ -64,7 +65,10 @@ const featureItem = [
 
 function Features() {
   return (
-    <div className=" flex flex-col items-center max-w-6xl w-full h-fit lg:h-screen px-10 m-auto gap-7 ">
+    <div
+      id="features"
+      className=" flex flex-col items-center max-w-6xl w-full h-fit lg:h-screen px-10 m-auto gap-7 "
+    >
       <h2 className="text-3xl md:text-4xl text-center">Popular Features</h2>
       <p className="text-gray-400 text-base leading-6 text-center max-w-[550px]">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam
@@ -72,14 +76,25 @@ function Features() {
         consectetur adipisicing elit. Officiis dis
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-        {featureItem.map((fi) => (
-          <Card
+        {featureItem.map((fi, idx) => (
+          <motion.div
             key={fi.name}
-            name={fi.name}
-            Icon={fi.icon}
-            colorValue={fi.color}
-            bg={fi.bg}
-          />
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: false }}
+            transition={{
+              duration: 0.8,
+              delay: idx * 0.2,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+          >
+            <Card
+              name={fi.name}
+              Icon={fi.icon}
+              colorValue={fi.color}
+              bg={fi.bg}
+            />
+          </motion.div>
         ))}
       </div>
     </div>
