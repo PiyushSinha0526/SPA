@@ -61,9 +61,9 @@ function ContactUs() {
       <div className="flex flex-col items-center gap-4 text-lg text-gray-400">
         Social media links:
         <div className="flex gap-4">
-          <BsTwitter size={25} className="text-blue-500" />
-          <RiInstagramFill size={25} className="text-orange-500" />
-          <RiFacebookFill size={25} className="text-blue-500" />
+          <BsTwitter size={25} className="text-blue-500 cursor-pointer hover:scale-105" />
+          <RiInstagramFill size={25} className="text-orange-500 cursor-pointer hover:scale-105" />
+          <RiFacebookFill size={25} className="text-blue-500 cursor-pointer hover:scale-105" />
         </div>
       </div>
       <div className="flex flex-col items-center gap-4">
