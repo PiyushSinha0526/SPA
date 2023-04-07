@@ -101,7 +101,7 @@ function Header() {
                     smooth={true}
                     offset={-100}
                     duration={500}
-                    className={`navLinkLarge ${
+                    className={`navLinkLarge cursor-pointer ${
                       activeIndex == index ? "active" : ""
                     }`}
                     onClick={() => setActiveIndex(index)}
@@ -189,7 +189,7 @@ function Header() {
                       duration={500}
                       key={index}
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
-                      className={`mb-1 text-center hover:border-b-2 border-blue-400 ${
+                      className={`mb-1 text-center cursor-pointer hover:border-b-2 border-blue-400 ${
                         activeIndex == index ? "active font-bold" : ""
                       }`}
                     >
